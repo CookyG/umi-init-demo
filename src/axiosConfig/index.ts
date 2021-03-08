@@ -1,8 +1,6 @@
 // import Vue from 'vue';
 import axios from 'axios';
 import qs from 'qs';
-// import store from "@/store";
-// import { Toast } from "vant";
 
 // 响应时间
 axios.defaults.timeout = 30 * 1000;
@@ -11,31 +9,10 @@ axios.defaults.timeout = 30 * 1000;
 // 配置请求头
 axios.defaults.headers.post['Content-Type'] =
   'application/x-www-form-urlencoded;charset=UTF-8';
-// axios.defaults.headers.common['Authorization'] = '1';
 
-axios.defaults.retry = 1;
-axios.defaults.retryDelay = 1000;
 // POST传参序列化(添加请求拦截器)
 axios.interceptors.request.use(
   (config: any) => {
-    // const clientId = process.env.VUE_APP_CLIENTID;
-    // const clientType = process.env.VUE_APP_CLIENTTYPE;
-
-    // //no Header
-    // const noHeader = ['/QueryIdCardOfFiles'];
-    // if (!config.url.includes(noHeader.join(','))) {
-    //   let _token = window.localStorage.getItem('token') || null;
-    //   if (_token) {
-    //     // config.headers.common["Authorization"] = _token;
-    //     config.headers.common['Token'] = _token;
-    //   }
-
-    //   if (clientId) {
-    //     config.headers.common['ClientId'] = clientId;
-    //     config.headers.common['ClientType'] = clientType;
-    //   }
-    // }
-
     const _token = window.localStorage.getItem('cc_token') || null;
     if (_token) {
       config.headers.common['Authorization'] = _token;
@@ -75,14 +52,6 @@ axios.interceptors.response.use(
     // 13.用户不存在
     if (gatewayStatus != 1) {
       if (data.gatewayMessage && detailedStatus != 13) {
-        // Toast({
-        //   duration: 2000,
-        //   overlay: true,
-        //   closeOnClick: true,
-        //   closeOnClickOverlay: true,
-        //   transition: "",
-        //   message: data.detailedMessage || data.gatewayMessage,
-        // });
       }
     }
 
@@ -95,8 +64,6 @@ axios.interceptors.response.use(
   },
   (error) => {
     const config = error.config;
-
-    // store.commit("setLoading", false);
 
     //不需要报错
     const noUrls = ['/JsapiTicket'];
@@ -159,25 +126,6 @@ axios.interceptors.response.use(
       }
     } else {
       error.message = '连接到服务器失败或超时';
-    }
-    // error.message && Toast(error.message);
-
-    // 设置和追踪重试次数
-    config.__retryCount = config.__retryCount || 0;
-    if (replayFlag) {
-      if (config.__retryCount < axios.defaults.retry) {
-        config.__retryCount += 1;
-
-        const backoff = new Promise((resolve) => {
-          setTimeout(() => {
-            resolve();
-          }, axios.defaults.retryDelay || 1);
-        });
-
-        return backoff.then(function () {
-          return axios(config);
-        });
-      }
     }
 
     return Promise.reject(error);
