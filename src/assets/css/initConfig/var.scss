@@ -1,0 +1,23 @@
+@mixin wh($w: 100%, $h: 100%) {
+  width: $w;
+  height: $h;
+}
+
+@mixin fx($w: space-between, $v: center) {
+  display: flex;
+  justify-content: $w;
+  align-items: $v;
+}
+
+$border-color: #e7e7e7;
+$bg-color: rgba(44, 106, 129, 0.6);
+$module-main-color: #4e80e7;
+$main-color: #4e80e7;
+$followUp-main-color: #4e80e7;
+$table-border-color: #eeeff3;
+
+@mixin fx($w: space-between, $v: center) {
+  display: flex;
+  justify-content: $w;
+  align-items: $v;
+}

@@ -1,0 +1,83 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-weight: 400;
+  font-variant: tabular-nums;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+
+  .anticon-loading,
+  .ant-spin-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    font-size: 48px !important;
+  }
+}
+
+.ant-message {
+  font-size: 16px;
+}
+
+.hide {
+  display: none;
+}
+
+/*滚动条样式*/
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  width: 0px;
+  height: 60px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.flex-row {
+  display: flex;
+}
+
+.bscroll-indicator {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+@import './initConfig/base.scss';
