@@ -14,7 +14,7 @@ import {
   propagationBind,
 } from '@/components/searchHooks/antEasyHook';
 
-import TableList from './table/index';
+import TableList from './table/tableTemp';
 
 function typeBind(initValue: any) {
   const [typeValue, setTypeValue] = useState(initValue);
