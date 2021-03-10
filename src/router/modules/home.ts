@@ -1,11 +1,8 @@
-const HomeRouter: Array<any> = [
+const HomeRouter = [
   {
-    path: '/home',
+    path: '/',
     component: '@/pages/home/index.tsx',
-    routes: [
-      { path: 'list', component: '@/pages/project/index.tsx' },
-      { path: '/home/', redirect: '/home/list' },
-    ],
+    title: '首页',
   },
 ];
 

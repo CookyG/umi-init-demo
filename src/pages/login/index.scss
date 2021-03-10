@@ -1,0 +1,132 @@
+.login {
+  display: flex;
+  background: rgba(152, 200, 233, 0.6);
+  user-select: none;
+
+  &-body {
+    display: flex;
+    @include wh(1000px, 618px);
+    margin: auto;
+    background-color: #fff;
+  }
+
+  &-left {
+    width: 500px;
+    flex: 0 0 auto;
+    position: relative;
+  }
+
+  &-logo {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+
+    img {
+      width: 170px;
+    }
+  }
+
+  &-banner {
+    width: 100%;
+
+    img {
+      @include wh();
+    }
+  }
+
+  &-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 90px;
+
+    &__inner {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    color: #38393f;
+    line-height: 37px;
+    margin-bottom: 30px;
+  }
+
+  &-tab {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    &__item + &__item {
+      margin-left: 40px;
+    }
+
+    &__item {
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 9px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #888c92;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: transparent;
+      }
+
+      &--active {
+        color: #333333;
+
+        &::after {
+          background: $main-color;
+        }
+      }
+    }
+  }
+
+  &-info {
+    .ant-input,
+    .ant-input-password {
+      padding: 13px 16px;
+    }
+
+    .ant-btn {
+      width: 100%;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      margin-top: 23px;
+      height: auto;
+
+      &[disabled] {
+        color: #fff;
+        background: $main-color;
+        opacity: 0.5;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 17px;
+
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #888d8f;
+      line-height: 20px;
+      cursor: pointer;
+    }
+  }
+}

@@ -8,11 +8,7 @@ const { Option } = Select;
 const { RangePicker } = DatePicker;
 
 // import base hook
-import {
-  inputBind,
-  dateBind,
-  propagationBind,
-} from '@/components/searchHooks/antEasyHook';
+import { inputBind, dateBind, propagationBind } from '@/pages/home/antEasyHook';
 
 import TableList from './table/tableTemp';
 

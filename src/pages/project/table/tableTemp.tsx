@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { Table, Tag, Space } from 'antd';
 
 import { TableContext } from '../index';
-console.log('TableContext: ', TableContext);
 // const params = useContext(TableContext);
 // console.log('params: ', params);
 

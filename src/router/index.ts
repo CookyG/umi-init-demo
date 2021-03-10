@@ -1,7 +1,9 @@
+import LoginRouter from './modules/login';
 import HomeRouter from './modules/home';
-const routerArr: Array<any> = [
+const routerArr = [
+  ...LoginRouter,
   ...HomeRouter,
-  { exact: true, path: '/', redirect: '/home/list' },
+  { exact: true, path: '*', redirect: '/' },
 ];
 
 export default routerArr;
