@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "ahooks": "^2.9.6",
     "axios": "^0.21.1",
     "umi": "^3.3.9"
   },
